@@ -1,0 +1,87 @@
+# 📘 Project: Full-Stack Task Manager (To-Do App)
+
+## 📝 Description
+This is a simple full-stack **To-Do list web application** where users can add, view, update, and delete their tasks. The project demonstrates full CRUD functionality with a modern tech stack.
+
+## 🔧 Tech Stack
+### Backend:
+- **FastAPI** (Python)
+- **MongoDB** with `motor` (asynchronous MongoDB driver)
+
+### Frontend:
+- **ReactJS**
+- **Axios** (for REST API calls)
+- **Bootstrap 5** (for UI styling)
+
+## 🚀 Features
+- ✅ Add new task (title + description)
+- ✅ Display all tasks in real-time
+- ✅ Update an existing task's description
+- ✅ Delete a task
+- ✅ Fast asynchronous communication with MongoDB
+- ✅ React frontend with live state updates
+
+## 🛠️ Installation
+
+### 🔙 Backend Setup (FastAPI + MongoDB)
+```bash
+# Clone the repo
+cd Backend
+pipenv install  # or use pip install -r requirements.txt
+pipenv shell
+uvicorn main:app --reload
+```
+
+Ensure MongoDB is running locally on: `mongodb://localhost:27017`
+
+### 🌐 Frontend Setup (React)
+```bash
+cd frontend
+npm install
+npm start
+```
+
+React app will run at `http://localhost:3000` and will communicate with the FastAPI server on `http://localhost:8000`
+
+## 📦 API Endpoints
+| Method | Endpoint              | Description                 |
+|--------|-----------------------|-----------------------------|
+| GET    | `/api/todo`           | Get all todo items          |
+| GET    | `/api/todo/{title}`   | Get a specific todo by title |
+| POST   | `/api/todo`           | Create a new todo item      |
+| PUT    | `/api/todo/{title}`   | Update a todo's description |
+| DELETE | `/api/todo/{title}`   | Delete a specific todo      |
+
+## 📂 Folder Structure
+```
+Backend/
+├── main.py              # FastAPI routes
+├── model.py             # Pydantic model
+├── database.py          # DB CRUD logic
+├── requirements.txt
+
+frontend/
+├── App.js               # Main React logic
+├── components/
+│   ├── TodoItem.js
+│   └── TodoListView.js
+├── index.js
+├── App.css
+```
+
+## 📌 Notes
+- MongoDB is used without authentication for simplicity (good for dev).
+- CORS is enabled for development (`localhost:3000` only).
+- Tasks are uniquely identified by their `title`.
+
+## 📈 Future Improvements
+- Add unique ID to each task
+- Add task completion status (checkbox)
+- User authentication (login/register)
+- Task filtering/sorting
+
+## 👨‍💻 Author
+- **Mohan Raj**
+
+---
+Let me know if you want this README generated as a separate markdown file (`README.md`)!
